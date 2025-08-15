@@ -3,8 +3,9 @@ import { palette } from '../../assets/color-pallete';
 import { styles as gStyles } from '../../styles/global'
 import { useEffect, useState } from 'react';
 import { UserData } from '../../models/User';
+import { Button } from '../../components';
 
-export function Home() {
+export function Home({ navigation }: any) {
   const [userData, setUserData] = useState<UserData>({
     avatar_url: '',
     bio: '',
@@ -25,11 +26,15 @@ export function Home() {
     fetchUserData()
   }, [])
 
+  const navigateToSkills = () => {
+    navigation.navigate('AbilitiesScreen')
+  }
+
   return (
     <View style={styles.container}>
       <Image src={userData.avatar_url} style={styles.avatar} />
       <Text style={[styles.text, gStyles.h1, styles.titleText]}>
-        Olá, eu sou o {userData.name}
+        Prazer, {userData.name}
       </Text>
       <Text style={[styles.text, gStyles.subtitle]}>
         {userData.bio}
@@ -46,6 +51,7 @@ export function Home() {
           {userData.company}
         </Text>
       </View>
+      <Button onClick={navigateToSkills} label='Skills' />
     </View>
   );
 }
