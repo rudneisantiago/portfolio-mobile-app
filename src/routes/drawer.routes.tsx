@@ -13,7 +13,7 @@ export function DrawerRoutes() {
         name="HomeScreen"
         component={Home}
         options={{
-          title: 'Home',
+          title: 'Bem vindo',
           headerStyle: {
             backgroundColor: palette[800],
           },
@@ -29,7 +29,7 @@ export function DrawerRoutes() {
         name="AbilitiesScreen"
         component={Abilities}
         options={{
-          title: 'Other',
+          title: 'Minhas Skills',
           drawerIcon: ({ size }) => {
             return <MaterialCommunityIcons name="adjust" size={size} />
           },
