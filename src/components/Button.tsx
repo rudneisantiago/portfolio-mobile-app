@@ -6,7 +6,7 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-import { palette } from '../assets/color-pallete';
+import { palette } from '../styles/color-pallete';
 
 interface Props {
   onClick: (event: GestureResponderEvent) => void,

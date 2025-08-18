@@ -1,5 +1,5 @@
 import { Image, StyleSheet, Text, View } from 'react-native';
-import { palette } from '../../assets/color-pallete';
+import { palette } from '../../styles/color-pallete';
 import { styles as gStyles } from '../../styles/global'
 import { useEffect, useState } from 'react';
 import { UserData } from '../../models/User';

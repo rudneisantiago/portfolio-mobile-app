@@ -2,7 +2,7 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 
 import { Abilities, Home } from "../screens";
-import { palette } from "../assets/color-pallete";
+import { palette } from "../styles/color-pallete";
 
 const { Navigator, Screen } = createDrawerNavigator()
 
