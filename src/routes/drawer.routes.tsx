@@ -1,39 +1,45 @@
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import { MaterialCommunityIcons } from '@expo/vector-icons'
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import { Abilities, Home } from "../screens";
 import { palette } from "../styles/color-pallete";
 
-const { Navigator, Screen } = createDrawerNavigator()
+const { Navigator, Screen } = createDrawerNavigator();
 
 export function DrawerRoutes() {
   return (
-    <Navigator initialRouteName="HomeScreen">
+    <Navigator
+      initialRouteName="HomeScreen"
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: palette[800],
+        },
+        headerTitleStyle: {
+          color: palette.textLight,
+        },
+        headerTintColor: palette.textLight,
+      }}
+    >
       <Screen
         name="HomeScreen"
         component={Home}
         options={{
-          title: 'Bem vindo',
-          headerStyle: {
-            backgroundColor: palette[800],
-          },
-          headerTitleStyle: {
-            color: palette.textLight
-          },
-          headerTintColor: palette.textLight,
+          title: "Bem vindo",
           drawerIcon: ({ size }) => {
-            return <MaterialCommunityIcons name="home" size={size} />
+            return <MaterialCommunityIcons name="home" size={size} />;
           },
-        }} />
+        }}
+      />
       <Screen
         name="AbilitiesScreen"
         component={Abilities}
         options={{
-          title: 'Minhas Skills',
+          title: "Minhas Skills",
           drawerIcon: ({ size }) => {
-            return <MaterialCommunityIcons name="adjust" size={size} />
+            return <MaterialCommunityIcons name="adjust" size={size} />;
           },
-        }} />
+        }}
+      />
     </Navigator>
-  )
+  );
 }
