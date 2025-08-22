@@ -1,5 +1,6 @@
 import React from "react";
 import { Text, View } from "react-native";
+import { AntDesign } from "@expo/vector-icons";
 
 import { styles as gStyles } from "../../styles/global";
 import { styles } from "./styles";
@@ -18,6 +19,8 @@ export function SkillInfoView() {
   const webFrameworks: ArraySkill = [
     ["VueJS", 5],
     ["React", 3],
+    ["TailwindCSS", 4],
+    ["Bootstrap", 5],
   ];
 
   const mobile: ArraySkill = [["React-Native", 3]];
@@ -25,7 +28,11 @@ export function SkillInfoView() {
   const skillInfo = (skill: string, proficiency: Proficiency) => (
     <View key={skill} style={styles.skillInfo}>
       <Text style={gStyles.h3}>{skill}</Text>
-      <Text style={styles.text}>{proficiency}</Text>
+      <View style={styles.skillIcons}>
+        {Array.from({ length: proficiency }, (_, i) => (
+          <AntDesign name="star" style={styles.iconStyle} key={i} />
+        ))}
+      </View>
     </View>
   );
 
